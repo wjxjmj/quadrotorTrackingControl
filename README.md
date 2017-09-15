@@ -7,4 +7,4 @@ The flying process
 
 The speeds tuning in the flying
 
-v![image](https://github.com/wjxjmj/quadrotorTracking/blob/master/p2.png)
+![image](https://github.com/wjxjmj/quadrotorTracking/blob/master/p2.png)
