@@ -21,7 +21,7 @@ s(1:3,:)=unifrnd(-0,0,[3,n]);
 s(4:6,:)=unifrnd(-0,0,[3,n]);
 s(7,:)=unifrnd(-0.0*pi,0.0*pi,[1,n]);
 s(8,:)=unifrnd(-0.0*pi,0.0*pi,[1,n]);
-s(9,:)=unifrnd(-1*pi,1*pi,[1,n]);
+s(9,:)=unifrnd(-0.0*pi,0.0*pi,[1,n]);
 x=s(1);y=s(2);z=s(3);
 vx=s(4);vy=s(5);vz=s(6);
 phi=s(7);theta=s(8);psi=s(9);
