@@ -54,7 +54,7 @@ xyHis=zeros(d,n+1,loop+1);
 xyHis(:,:,1)=[xl s(1:3)];
 
 %simulation start
-hwait=waitbar(0,'进行中>>>>>>>>>>');
+hwait=waitbar(0,'陆酶脨脨脰脨>>>>>>>>>>');
 
 sp=1;
 omegaHis=zeros(4,loop);
@@ -71,6 +71,8 @@ for t=1:loop
         al=([-sp;0;0]-vl);
     elseif t/loop<0.8
         al=([0;-sp;0]-vl);
+    elseif t/loop<0.9
+        al=([sp;0;sp]-vl);
     else
         al=([sp;0;0]-vl);
     end
@@ -90,7 +92,7 @@ for t=1:loop
     %recodrd the position of quadrotor at time t/loop*stime
     xyHis(:,:,t+1)=[xl s(1:3)];
     
-    waitbar(t/loop,hwait,'优化进行中');
+    waitbar(t/loop,hwait,'脫脜禄炉陆酶脨脨脰脨');
 end
 
 close(hwait);
