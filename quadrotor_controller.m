@@ -13,19 +13,22 @@ tr=[para.b para.b para.b para.b;0 -para.b*para.l 0 para.b*para.l;-para.b*para.l 
 
 
 input_delta=k1*(xl-[x;y;z])+k2*(vl-[vx;vy;vz]);
-attr=saturate(input_delta)+[0;0;para.g];
+attr=saturate(input_delta)*2+[0;0;para.g];
 rot=[cos(psi) sin(psi) 0;-sin(psi) cos(psi) 0;0 0 1];
 attr=rot*attr;
 
 u(1)=para.m*norm(attr);
 
 phi_p=asin(-attr(2)/norm(attr));
-theta_p=asin(attr(1)/norm(attr)/cos(phi_p));
+theta_p=atan(attr(1)/attr(3));
+if attr(3)<0
+    theta_p=theta_p-pi;
+end
 psi_p=psil;
 
 u(4)=para.Iz*saturate(angleDelta(psi_p,psi)+0-vpsi);
-u(2)=para.Ix*(u(1)+u(4))/2*saturate(angleDelta(phi_p,phi)+0-1*vphi)/para.l;
-u(3)=para.Iy*(u(1)-u(4))/2*saturate(angleDelta(theta_p,theta)+0-1*vtheta)/para.l;
+u(2)=20*para.Ix*(u(1)+u(4))/2*saturate(angleDelta(phi_p,phi)+0-1*vphi)/para.l;
+u(3)=20*para.Iy*(u(1)-u(4))/2*saturate(angleDelta(theta_p,theta)+0-1*vtheta)/para.l;
 
 omega2=(tr\u);
 omega2(omega2<0)=0;
