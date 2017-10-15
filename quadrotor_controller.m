@@ -9,7 +9,7 @@ vx=s(4);vy=s(5);vz=s(6);
 phi=s(7);theta=s(8);psi=s(9);
 vphi=s(10);vtheta=s(11);vpsi=s(12);
 u=zeros(4,1);
-tr=[para.b para.b para.b para.b;0 -para.b*para.l 0 para.b*para.l;-para.b*para.l 0 para.b*para.l 0;-para.d para.d -para.d para.d];
+tr=[para.b para.b para.b para.b;0 -para.b 0 para.b;-para.b 0 para.b 0;-para.d para.d -para.d para.d];
 
 
 input_delta=k1*(xl-[x;y;z])+k2*(vl-[vx;vy;vz]);
