@@ -8,7 +8,7 @@ x=s(1);y=s(2);z=s(3);
 vx=s(4);vy=s(5);vz=s(6);
 phi=s(7);theta=s(8);psi=s(9);
 vphi=s(10);vtheta=s(11);vpsi=s(12);
-tr=[para.b para.b para.b para.b;0 -para.b*para.l 0 para.b*para.l;-para.b*para.l 0 para.b*para.l 0;-para.d para.d -para.d para.d];
+tr=[para.b para.b para.b para.b;0 -para.b 0 para.b;-para.b 0 para.b 0;-para.d para.d -para.d para.d];
 
 omega2=(omega).^2;
 Omega=-omega(1)+omega(2)-omega(3)+omega(4);
