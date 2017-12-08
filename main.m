@@ -87,7 +87,7 @@ for t=1:loop
     omegaHis(:,t)=omega;
     
     %send speeds of four motors to quadrotor and get its state
-    s=quadrotor_dynamic(s,omega,para,dt);
+    s=quadrotor_kinematics(s,omega,para,dt);
     
     %recodrd the position of quadrotor at time t/loop*stime
     xyHis(:,:,t+1)=[xl s(1:3)];
