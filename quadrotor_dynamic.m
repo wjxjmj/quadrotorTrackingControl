@@ -2,7 +2,7 @@
 % Author: wjxjmj
 % Email: wjxjmj@126.com
 % Open Source License: GPL
-function s=quadrotor_dynamic(s,omega,para,dt)
+function s=quadrotor_kinematics(s,omega,para,dt)
 
 x=s(1);y=s(2);z=s(3);
 vx=s(4);vy=s(5);vz=s(6);
