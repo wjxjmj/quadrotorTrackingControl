@@ -74,31 +74,31 @@ amin=amin-0.05*aw;
 amax=amax+0.05*aw;
 bmin=bmin-0.05*bw;
 bmax=bmax+0.05*bw;
-xyz=reshape(xyHis,3*n,loop);%Îª·½±ã»­³öÖÇÄÜÌåµÄÀúÊ·¹ì¼££¬¶Ô¼ÇÂ¼ÖÇÄÜÌåÀúÊ·Î»ÖÃµÄ¾ØÕó½øĞĞ±äĞÍ
-hwait=waitbar(0,'½øĞĞÖĞ>>>>>>>>>>');
+xyz=reshape(xyHis,3*n,loop);%ä¸ºæ–¹ä¾¿ç”»å‡ºæ™ºèƒ½ä½“çš„å†å²è½¨è¿¹ï¼Œå¯¹è®°å½•æ™ºèƒ½ä½“å†å²ä½ç½®çš„çŸ©é˜µè¿›è¡Œå˜å‹
+hwait=waitbar(0,'è¿›è¡Œä¸­>>>>>>>>>>');
 for k=1:loop
-    plot3(xyHis(1,:,1),xyHis(2,:,1),xyHis(3,:,1),'kx','LineSmooth','on')
+    plot3(xyHis(1,:,1),xyHis(2,:,1),xyHis(3,:,1),'kx')
     hold on
-    plot3(xyHis(1,1,k),xyHis(2,1,k),xyHis(3,1,k),'rp','LineSmooth','on')
-    plot3(xyHis(1,2:end,k),xyHis(2,2:end,k),xyHis(3,2:end,k),'bo', 'MarkerFaceColor','b','MarkerSize',5,'LineSmooth','on')
+    plot3(xyHis(1,1,k),xyHis(2,1,k),xyHis(3,1,k),'rp')
+    plot3(xyHis(1,2:end,k),xyHis(2,2:end,k),xyHis(3,2:end,k),'bo', 'MarkerFaceColor','b','MarkerSize',5)
     
-    tail=tailLength;%¡°Î²°ÍµÄ³¤¶È¡±
+    tail=tailLength;%â€œå°¾å·´çš„é•¿åº¦â€
     if k<=tailLength || tailLength<0
-        plot3(xyz(1,1:k),xyz(2,1:k),xyz(3,1:k),'m--','LineSmooth','on')
+        plot3(xyz(1,1:k),xyz(2,1:k),xyz(3,1:k),'m--')
     else
-        plot3(xyz(1,k-tail:k),xyz(2,k-tail:k),xyz(3,k-tail:k),'m--','LineSmooth','on')
+        plot3(xyz(1,k-tail:k),xyz(2,k-tail:k),xyz(3,k-tail:k),'m--')
     end
     for i=2:n
         if k<=tailLength || tailLength<0
-            plot3(xyz(3*i-2,1:k),xyz(3*i-1,1:k),xyz(3*i,1:k),'c-','LineSmooth','on')
+            plot3(xyz(3*i-2,1:k),xyz(3*i-1,1:k),xyz(3*i,1:k),'c-')
         else
-            plot3(xyz(3*i-2,k-tail:k),xyz(3*i-1,k-tail:k),xyz(3*i,k-tail:k),'c-','LineSmooth','on')
+            plot3(xyz(3*i-2,k-tail:k),xyz(3*i-1,k-tail:k),xyz(3*i,k-tail:k),'c-')
         end
     end
-    hold off%¹Ø±Õ¡°µş¼Ó¡±»æÍ¼Ä£Ê½
+    hold off%å…³é—­â€œå åŠ â€ç»˜å›¾æ¨¡å¼
     title(['time=',num2str(k/loop*ts)]);
     
-    axis([amin amax bmin bmax cmin cmax]);%¹Ì¶¨»æÖÆÇøÓò
+    axis([amin amax bmin bmax cmin cmax]);%å›ºå®šç»˜åˆ¶åŒºåŸŸ
     if tt>0
         if k/loop*ts>=tt
             break
@@ -109,7 +109,7 @@ for k=1:loop
     
 %     axis equal
     %pause(0.1)
-    waitbar(k/loop,hwait,'ÓÅ»¯½øĞĞÖĞ');
+    waitbar(k/loop,hwait,'ä¼˜åŒ–è¿›è¡Œä¸­');
 end
 close(hwait);
 xlabel('x')
