@@ -92,7 +92,7 @@ for t=1:loop
     %recodrd the position of quadrotor at time t/loop*stime
     xyHis(:,:,t+1)=[xl s(1:3)];
     
-    waitbar(t/loop,hwait,'ÓÅ»¯½øÐÐÖÐ');
+    waitbar(t/loop,hwait,'simulating...');
 end
 
 close(hwait);
@@ -104,5 +104,5 @@ grid on
 
 %show changes in motor speeds during the flight
 figure(2)
-plot(omegaHis','linesmooth','on')
+plot(omegaHis')
 grid on
